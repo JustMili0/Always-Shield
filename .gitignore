@@ -1,3 +1,19 @@
+run/
+.idea/
+.vscode/
+.gradle/
+.settings/
+build/
+bin/
+neoforge/build
+fabric/buid
+fabric/run
+neoforge/run
+neoforge/.gradle
+fabric/.gradle
+common/build
+common/.gradle
+
 # Compiled class file
 *.class
 

@@ -3,36 +3,34 @@
   "id": "alwaysshield",
   "version": "${version}",
   "name": "Always Shield",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "description": "Removes the obnoxious block delay of the shield, so it works the moment you press Right-Click. No more delay and confusion!",
   "authors": [
-    "Me!"
+    "JustMili"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": [
+      "https://modrinth.com/mod/always-shield",
+      "CURSEFORGE"
+    ],
+    "sources": "https://github.com/JustMili0/Always-Shield"
   },
-  "license": "CC0-1.0",
-  "icon": "assets/alwaysshield/icon.png",
+  "license": "MIT",
+  "icon": "icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.justmili.fabric.ExampleModFabric"
+      "net.justmili.fabric.AlwaysShieldFabric"
     ],
-    "client": [
-      "net.justmili.fabric.client.ExampleModFabricClient"
-    ]
+    "client": []
   },
   "mixins": [
     "alwaysshield.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.18.1",
+    "fabricloader": ">=0.17.0",
     "minecraft": "~1.21.1",
     "java": ">=21",
     "architectury": ">=13.0.8",
     "fabric-api": "*"
-  },
-  "suggests": {
-    "another-mod": "*"
   }
 }

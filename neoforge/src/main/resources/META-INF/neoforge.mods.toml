@@ -1,17 +1,17 @@
 modLoader = "javafml"
 loaderVersion = "[4,)"
-#issueTrackerURL = ""
-license = "Insert License Here"
+issueTrackerURL = "https://github.com/JustMili0/Always-Shield/issues"
+license = "MIT"
 
 [[mods]]
 modId = "alwaysshield"
 version = "${version}"
 displayName = "Always Shield"
-authors = "Me!"
+authors = "JustMili"
 description = '''
-This is an example description! Tell everyone what your mod is about!
+Removes the obnoxious block delay of the shield, so it works the moment you press Right-Click. No more delay and confusion!
 '''
-#logoFile = ""
+logoFile = "icon.png"
 
 [[dependencies.alwaysshield]]
 modId = "neoforge"

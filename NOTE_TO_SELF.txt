@@ -1,0 +1,11 @@
+Works:
+NeoForge, NoShieldDelay
+Fabric, NoShield Delay
+Fabric, SwordBlocking (ANIMATION-ONLY)
+  - Requires Shield in Off-Hand for animation to play
+NeoForge, SwordBlocking (ANIMATION-ONLY)
+  - Requires Shield in Off-Hand for animation to play
+
+Doesn't work:
+Fabric, SwordBlocking (BLOCKING)
+NeoForge, SwordBlocking (BLOCKING)

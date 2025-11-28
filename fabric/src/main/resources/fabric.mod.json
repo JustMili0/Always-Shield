@@ -8,10 +8,7 @@
     "JustMili"
   ],
   "contact": {
-    "homepage": [
-      "https://modrinth.com/mod/always-shield",
-      "CURSEFORGE"
-    ],
+    "homepage": "https://modrinth.com/mod/always-shield",
     "sources": "https://github.com/JustMili0/Always-Shield"
   },
   "license": "MIT",

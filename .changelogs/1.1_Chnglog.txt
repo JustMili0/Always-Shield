@@ -1,0 +1,4 @@
+# Removed
+- Sword Blocking
+  - Didn't always work
+

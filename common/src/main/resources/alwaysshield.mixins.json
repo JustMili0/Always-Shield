@@ -6,8 +6,7 @@
   "client": [
   ],
   "mixins": [
-    "NoShieldDelay",
-    "SwordBlocking"
+    "NoShieldDelay"
   ],
   "injectors": {
     "defaultRequire": 1

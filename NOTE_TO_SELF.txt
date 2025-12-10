@@ -1,4 +1,0 @@
-To-Do:
-- Add config to disable/enable sword blocking
-- Figure out first-person animation
-- Add damage taking to the sword when absorbing damage

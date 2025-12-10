@@ -6,9 +6,7 @@ run/
 build/
 bin/
 neoforge/build
-fabric/buid
-fabric/run
-neoforge/run
+fabric/build
 neoforge/.gradle
 fabric/.gradle
 common/build
@@ -28,6 +26,8 @@ common/.gradle
 
 # Package Files #
 *.jar
+!fabric/run/mods/*.jar
+!neoforge/run/mods/*.jar
 *.war
 *.nar
 *.ear

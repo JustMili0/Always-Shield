@@ -6,7 +6,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(Consumable.class)
+@Mixin(value = Consumable.class, remap = false)
 public class NoShieldDelay {
     @Inject(method = "consumeTicks", at = @At("HEAD"), cancellable = true)
     private void removeShieldDelay(CallbackInfoReturnable<Integer> cir) {

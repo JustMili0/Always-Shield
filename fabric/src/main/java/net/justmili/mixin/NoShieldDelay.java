@@ -1,14 +1,16 @@
 package net.justmili.mixin;
 
-import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.component.Consumable;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.injection.Constant;
-import org.spongepowered.asm.mixin.injection.ModifyConstant;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(LivingEntity.class)
+@Mixin(Consumable.class)
 public class NoShieldDelay {
-    @ModifyConstant(method = "isBlocking", constant = @Constant(intValue = 5))
-    private int removeShieldDelay(int original) {
-        return 0;
+    @Inject(method = "consumeTicks", at = @At("HEAD"), cancellable = true)
+    private void removeShieldDelay(CallbackInfoReturnable<Integer> cir) {
+        //TODO: find a way to limit this to only ShieldItem
+        cir.setReturnValue(0);
     }
 }

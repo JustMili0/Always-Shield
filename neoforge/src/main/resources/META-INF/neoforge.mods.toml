@@ -16,21 +16,21 @@ logoFile = "icon.png"
 [[dependencies.alwaysshield]]
 modId = "neoforge"
 type = "required"
-versionRange = "[21.6,)"
+versionRange = "[${neo_version_range},)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.alwaysshield]]
 modId = "minecraft"
 type = "required"
-versionRange = "[1.21.6]"
+versionRange = "[${minecraft_version}]"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.alwaysshield]]
 modId = "architectury"
 type = "required"
-versionRange = "[17.0.6,)"
+versionRange = "*"
 ordering = "AFTER"
 side = "BOTH"
 

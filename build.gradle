@@ -11,6 +11,8 @@ architectury {
 allprojects {
     group = rootProject.maven_group
     version = rootProject.mod_version
+    minecraft_version = rootProject.minecraft_version
+    neo_version_range = rootProject.neo_version_range
 }
 
 subprojects {

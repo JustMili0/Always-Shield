@@ -7,7 +7,7 @@ import org.spongepowered.asm.mixin.injection.ModifyConstant;
 
 @Mixin(LivingEntity.class)
 public class NoShieldDelay {
-    @ModifyConstant(method = "getItemBlockingWith", constant = @Constant(intValue = 5) )
+    @ModifyConstant(method = "getItemBlockingWith", constant = @Constant(intValue = 5))
     private int removeShieldDelay(int constant) {
         return 0;
     }

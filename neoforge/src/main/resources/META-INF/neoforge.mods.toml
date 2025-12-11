@@ -35,4 +35,4 @@ ordering = "AFTER"
 side = "BOTH"
 
 [[mixins]]
-config = "alwaysshield.neoforge.mixins.json"
+config = "alwaysshield-neoforge.mixins.json"

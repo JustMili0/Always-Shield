@@ -18,9 +18,7 @@ subprojects {
     apply plugin: 'architectury-plugin'
     apply plugin: 'maven-publish'
 
-    base {
-        archivesName = "$rootProject.archives_name"
-    }
+    base { archivesName = rootProject.display_name }
 
     repositories {
     }
@@ -43,6 +41,33 @@ subprojects {
         it.options.release = 21
     }
 
+    def detectedPlatform = ''
+    if (project.name.toLowerCase().contains('fabric') || project.path.toLowerCase().contains('fabric')) {
+        detectedPlatform = 'Fabric'
+    } else if (project.name.toLowerCase().contains('neoforge') || project.path.toLowerCase().contains('neoforge') || project.name.toLowerCase().contains('forge')) {
+        detectedPlatform = 'NeoForge'
+    } else {
+        detectedPlatform = ''
+    }
+
+    if (detectedPlatform) {
+        project.version = "${rootProject.mod_version}+mc${rootProject.minecraft_version}-${detectedPlatform}"
+    } else {
+        project.version = rootProject.mod_version
+    }
+
+    tasks.withType(Jar).configureEach { Jar jarTask ->
+        jarTask.archiveBaseName.set(rootProject.display_name)
+        jarTask.archiveVersion.set(project.version.toString())
+    }
+
+    tasks.matching { it.name == 'shadowJar' }.configureEach { task ->
+        if (task.hasProperty('archiveBaseName')) {
+            task.archiveBaseName.set(rootProject.display_name)
+            task.archiveVersion.set(project.version.toString())
+        }
+    }
+
     publishing {
         publications {
             mavenJava(MavenPublication) {
@@ -53,3 +78,5 @@ subprojects {
 
         repositories {
         }
+    }
+}

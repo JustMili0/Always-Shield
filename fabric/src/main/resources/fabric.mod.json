@@ -21,7 +21,7 @@
     "client": []
   },
   "mixins": [
-    "alwaysshield.fabric.mixins.json"
+    "alwaysshield-fabric.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=0.18.0",

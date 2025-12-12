@@ -11,6 +11,8 @@ architectury {
 allprojects {
     group = rootProject.maven_group
     version = rootProject.mod_version
+    minecraft_version = rootProject.minecraft_version
+    neo_version_range = rootProject.neo_version_range
 }
 
 subprojects {
@@ -18,17 +20,9 @@ subprojects {
     apply plugin: 'architectury-plugin'
     apply plugin: 'maven-publish'
 
-    base {
-        // Set up a suffixed format for the mod jar names, e.g. `example-fabric`.
-        archivesName = "$rootProject.archives_name"
-    }
+    base { archivesName = rootProject.display_name }
 
     repositories {
-        // Add repositories to retrieve artifacts from in here.
-        // You should only use this when depending on other mods because
-        // Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
-        // See https://docs.gradle.org/current/userguide/declaring_repositories.html
-        // for more information about repositories.
     }
 
     loom {
@@ -49,21 +43,30 @@ subprojects {
         it.options.release = 21
     }
 
-    // Configure Maven publishing.
-    publishing {
-        publications {
-            mavenJava(MavenPublication) {
-                artifactId = base.archivesName.get()
-                from components.java
-            }
-        }
+    def detectedPlatform = ''
+    if (project.name.toLowerCase().contains('fabric') || project.path.toLowerCase().contains('fabric')) {
+        detectedPlatform = 'Fabric'
+    } else if (project.name.toLowerCase().contains('neoforge') || project.path.toLowerCase().contains('neoforge') || project.name.toLowerCase().contains('forge')) {
+        detectedPlatform = 'NeoForge'
+    } else {
+        detectedPlatform = ''
+    }
 
-        // See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
-        repositories {
-            // Add repositories to publish to here.
-            // Notice: This block does NOT have the same function as the block in the top level.
-            // The repositories here will be used for publishing your artifact, not for
-            // retrieving dependencies.
+    if (detectedPlatform) {
+        project.version = "${rootProject.mod_version}+mc${rootProject.minecraft_version}-${detectedPlatform}"
+    } else {
+        project.version = rootProject.mod_version
+    }
+
+    tasks.withType(Jar).configureEach { Jar jarTask ->
+        jarTask.archiveBaseName.set(rootProject.display_name)
+        jarTask.archiveVersion.set(project.version.toString())
+    }
+
+    tasks.matching { it.name == 'shadowJar' }.configureEach { task ->
+        if (task.hasProperty('archiveBaseName')) {
+            task.archiveBaseName.set(rootProject.display_name)
+            task.archiveVersion.set(project.version.toString())
         }
     }
 }

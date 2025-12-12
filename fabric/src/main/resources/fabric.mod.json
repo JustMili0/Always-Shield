@@ -21,12 +21,12 @@
     "client": []
   },
   "mixins": [
-    "alwaysshield-fabric.mixins.json"
+    "alwaysshield-common.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=0.18.0",
     "fabric": "*",
-    "minecraft": "${minecraft_version}",
+    "minecraft": ">=1.21.5 <=1.21.8",
     "java": ">=21",
     "architectury": "*"
   }

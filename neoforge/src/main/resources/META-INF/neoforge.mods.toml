@@ -16,14 +16,14 @@ logoFile = "icon.png"
 [[dependencies.alwaysshield]]
 modId = "neoforge"
 type = "required"
-versionRange = "[${neo_version_range},)"
+versionRange = "[21.5,21.8]"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.alwaysshield]]
 modId = "minecraft"
 type = "required"
-versionRange = "[${minecraft_version}]"
+versionRange = "[1.21.5,1.21.8]"
 ordering = "NONE"
 side = "BOTH"
 
@@ -35,4 +35,4 @@ ordering = "AFTER"
 side = "BOTH"
 
 [[mixins]]
-config = "alwaysshield-neoforge.mixins.json"
+config = "alwaysshield-common.mixins.json"

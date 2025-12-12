@@ -11,6 +11,8 @@ architectury {
 allprojects {
     group = rootProject.maven_group
     version = rootProject.mod_version
+    minecraft_version = rootProject.minecraft_version
+    neo_version_range = rootProject.neo_version_range
 }
 
 subprojects {
@@ -65,18 +67,6 @@ subprojects {
         if (task.hasProperty('archiveBaseName')) {
             task.archiveBaseName.set(rootProject.display_name)
             task.archiveVersion.set(project.version.toString())
-        }
-    }
-
-    publishing {
-        publications {
-            mavenJava(MavenPublication) {
-                artifactId = base.archivesName.get()
-                from components.java
-            }
-        }
-
-        repositories {
         }
     }
 }

@@ -69,16 +69,4 @@ subprojects {
             task.archiveVersion.set(project.version.toString())
         }
     }
-
-    publishing {
-        publications {
-            mavenJava(MavenPublication) {
-                artifactId = base.archivesName.get()
-                from components.java
-            }
-        }
-
-        repositories {
-        }
-    }
 }

@@ -46,12 +46,11 @@ subprojects {
 
     def detectedPlatform
     def name = project.name.toLowerCase()
-    def path = project.path.toLowerCase()
-    if (name.contains('fabric') || path.contains('fabric')) {
+    if (name.contains('fabric')) {
         detectedPlatform = 'Fabric'
-    } else if (name.contains('neoforge') || path.contains('neoforge')) {
+    } else if (name.contains('neoforge')) {
         detectedPlatform = 'NeoForge'
-    } else if (name.contains('forge') || path.contains('forge')) {
+    } else if (name.contains('forge')) {
         detectedPlatform = 'Forge'
     } else {
         detectedPlatform = 'Unknown'

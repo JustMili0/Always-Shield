@@ -1,0 +1,5 @@
+## New Loader Support
+- Forge
+
+## Removed
+- Architectury API dependency for 1.21-1.21.1 and 1.21.2-1.21.4

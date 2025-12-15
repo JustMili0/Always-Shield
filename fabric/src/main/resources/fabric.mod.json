@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "alwaysshield",
-  "version": "1.1",
+  "version": "${mod_version}",
   "name": "Always Shield",
   "description": "Removes the obnoxious block delay of the shield, so it works the moment you press Right-Click. No more delay and confusion!",
   "authors": [
@@ -29,7 +29,6 @@
       "1.21",
       "1.21.1"
     ],
-    "java": ">=21",
-    "architectury": "*"
+    "java": ">=21"
   }
 }

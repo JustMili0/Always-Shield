@@ -10,7 +10,8 @@ architectury {
 
 allprojects {
     group = rootProject.maven_group
-    version = rootProject.mod_version
+    version = rootProject.mod_version //for file building
+    mod_version = rootProject.mod_version
     minecraft_version = rootProject.minecraft_version
     neo_version_range = rootProject.neo_version_range
 }
@@ -43,13 +44,17 @@ subprojects {
         it.options.release = 21
     }
 
-    def detectedPlatform = ''
-    if (project.name.toLowerCase().contains('fabric') || project.path.toLowerCase().contains('fabric')) {
+    def detectedPlatform
+    def name = project.name.toLowerCase()
+    def path = project.path.toLowerCase()
+    if (name.contains('fabric') || path.contains('fabric')) {
         detectedPlatform = 'Fabric'
-    } else if (project.name.toLowerCase().contains('neoforge') || project.path.toLowerCase().contains('neoforge') || project.name.toLowerCase().contains('forge')) {
+    } else if (name.contains('neoforge') || path.contains('neoforge')) {
         detectedPlatform = 'NeoForge'
+    } else if (name.contains('forge') || path.contains('forge')) {
+        detectedPlatform = 'Forge'
     } else {
-        detectedPlatform = ''
+        detectedPlatform = 'Unknown'
     }
 
     if (detectedPlatform) {

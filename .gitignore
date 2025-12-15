@@ -5,10 +5,15 @@ run/
 .settings/
 build/
 bin/
-neoforge/build
-fabric/build
+neoforge/run
 neoforge/.gradle
+neoforge/build
+fabric/run
+fabric/build
 fabric/.gradle
+forge/run
+forge/build
+forge/.gradle
 common/build
 common/.gradle
 
@@ -26,8 +31,6 @@ common/.gradle
 
 # Package Files #
 *.jar
-!fabric/run/mods/*.jar
-!neoforge/run/mods/*.jar
 *.war
 *.nar
 *.ear

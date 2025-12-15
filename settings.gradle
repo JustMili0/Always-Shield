@@ -11,4 +11,5 @@ rootProject.name = 'alwaysshield'
 
 include 'common'
 include 'fabric'
+include 'forge'
 include 'neoforge'

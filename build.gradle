@@ -47,7 +47,8 @@ subprojects {
 
 forgix {
     destinationDirectory = layout.buildDirectory.dir("libs")
-    archiveClassifier = "FQFNF"
+    archiveClassifier = "FQFN"
+    autoRun = true
 
     fabric()
     forge()

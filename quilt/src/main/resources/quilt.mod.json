@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "quilt_loader": {
+    "group": "${group}",
+    "id": "alwaysshield",
+    "version": "${mod_version}",
+    "metadata": {
+      "name": "Always Shield",
+      "description": "Removes the obnoxious block delay of the shield, so it works the moment you press Right-Click. No more delay and confusion!",
+      "contributors": {
+        "JustMili": "Author"
+      },
+      "icon": "icon.png"
+    },
+    "intermediate_mappings": "net.fabricmc:intermediary",
+    "entrypoints": {
+      "init": [
+        "net.justmili.quilt.AlwaysShieldQuilt"
+      ]
+    },
+    "depends": [
+      {
+        "id": "quilt_loader",
+        "version": "*"
+      },
+      {
+        "id": "minecraft",
+        "version": [
+          "1.21.2",
+          "1.21.3",
+          "1.21.4"
+        ]
+      }
+    ]
+  },
+  "mixin": [
+    "alwaysshield-common.mixins.json"
+  ]
+}

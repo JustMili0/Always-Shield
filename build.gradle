@@ -51,6 +51,7 @@ forgix {
     autoRun = true
 
     fabric()
+    quilt()
     forge()
     neoforge()
 }

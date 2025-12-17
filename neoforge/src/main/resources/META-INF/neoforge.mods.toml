@@ -16,7 +16,7 @@ logoFile = "icon.png"
 [[dependencies.alwaysshield]]
 modId = "neoforge"
 type = "required"
-versionRange = "[${neo_version_range}]"
+versionRange = "[21.0,)"
 ordering = "NONE"
 side = "BOTH"
 

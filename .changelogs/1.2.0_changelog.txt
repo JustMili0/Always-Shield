@@ -2,7 +2,10 @@
 - Quilt
 
 ## New Version Support
-- 26.1 Snapshot 1
+- 26.1 Snapshot 1 [WORKING ON IT]
+
+## Fixed
+- NeoForge mod loader compatibility error (accross all versions)
 
 ## Other (Source code)
 - Added Forgix to project gradle to have all loaders in one jar

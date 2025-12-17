@@ -26,6 +26,3 @@ type = "required"
 versionRange = "[1.21,1.21.1]"
 ordering = "NONE"
 side = "BOTH"
-
-[[mixins]]
-config = "alwaysshield-common.mixins.json"

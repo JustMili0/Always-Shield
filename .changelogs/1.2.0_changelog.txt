@@ -1,0 +1,8 @@
+## New Loader Support
+- Quilt
+
+## New Version Support
+- 26.1 Snapshot 1
+
+## Other (Source code)
+- Added Forgix to project gradle to have all loaders in one jar

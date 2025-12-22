@@ -8,4 +8,4 @@
 - NeoForge mod loader compatibility error (accross all versions)
 
 ## Other (Source code)
-- Added Forgix to project gradle to have all loaders in one jar
+- Added Forgix to project gradle to have all loaders in one jar (except forge, it's a separate file)

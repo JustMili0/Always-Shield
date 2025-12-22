@@ -16,30 +16,25 @@ allprojects {
     minecraft_version = rootProject.minecraft_version
     neo_version_range = rootProject.neo_version_range
 }
-
 subprojects {
     apply plugin: 'dev.architectury.loom'
     apply plugin: 'architectury-plugin'
     apply plugin: 'maven-publish'
 
     base {
-        archivesName = rootProject.display_name
+        archivesName = rootProject.archives_name
     }
-
     loom {
         silentMojangMappingsLicense()
     }
-
     dependencies {
         minecraft "net.minecraft:minecraft:$rootProject.minecraft_version"
         mappings loom.officialMojangMappings()
     }
-
     java {
         sourceCompatibility = JavaVersion.VERSION_21
         targetCompatibility = JavaVersion.VERSION_21
     }
-
     tasks.withType(JavaCompile).configureEach {
         it.options.release = 21
     }
@@ -47,11 +42,10 @@ subprojects {
 
 forgix {
     destinationDirectory = layout.buildDirectory.dir("libs")
-    archiveClassifier = "FQFN"
+    archiveClassifier = "Fabric-Quilt-Neo"
     autoRun = true
 
     fabric()
     quilt()
-    forge()
     neoforge()
 }

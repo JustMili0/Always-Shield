@@ -26,6 +26,9 @@ subprojects {
     }
     loom {
         silentMojangMappingsLicense()
+        mixin {
+            useLegacyMixinAp = true
+        }
     }
     dependencies {
         minecraft "net.minecraft:minecraft:$rootProject.minecraft_version"

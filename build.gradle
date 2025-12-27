@@ -3,11 +3,12 @@ plugins {
 	id 'maven-publish'
 }
 
-version = project.mod_version
+mod_version = project.mod_version
 group = project.maven_group
 
+version = "${project.mod_version}+mc${project.short_mcv}-FabricOnly"
 base {
-	archivesName = project.archives_base_name
+    archivesName = project.archives_base_name
 }
 
 repositories {}
@@ -19,10 +20,10 @@ dependencies {
 }
 
 processResources {
-	inputs.property "version", project.version
+	inputs.property "mod_version", project.mod_version
 
 	filesMatching("fabric.mod.json") {
-		expand "version": inputs.properties.version
+		expand "mod_version": inputs.properties.mod_version
 	}
 }
 
@@ -36,9 +37,7 @@ java {
 }
 
 jar {
-	inputs.property "archivesName", project.base.archivesName
-
 	from("LICENSE") {
-		rename { "${it}_${inputs.properties.archivesName}"}
+		rename { "${it}"}
 	}
 }

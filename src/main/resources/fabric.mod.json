@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "alwaysshield",
-  "version": "${version}",
+  "version": "${mod_version}",
   "name": "Always Shield",
   "description": "Removes the obnoxious block delay of the shield, so it works the moment you press Right-Click. No more delay and confusion!",
   "authors": [
@@ -25,9 +25,7 @@
   ],
   "depends": {
     "fabricloader": ">=0.18.3",
-    "minecraft": [
-      "26.1-snapshot-1"
-    ],
+    "minecraft": "~26.1-",
     "java": ">=25"
   }
 }

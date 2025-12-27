@@ -16,7 +16,7 @@ logoFile = "icon.png"
 [[dependencies.alwaysshield]]
 modId = "neoforge"
 type = "required"
-versionRange = "[21.2,)"
+versionRange = "[${neo_version_range},)"
 ordering = "NONE"
 side = "BOTH"
 
@@ -26,3 +26,6 @@ type = "required"
 versionRange = "[1.21.2,1.21.4]"
 ordering = "NONE"
 side = "BOTH"
+
+[[mixins]]
+config = "alwaysshield-common.mixins.json"

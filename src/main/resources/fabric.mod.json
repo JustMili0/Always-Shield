@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "alwaysshield",
-  "version": "${mod_version}",
+  "version": "${version}",
   "name": "Always Shield",
   "description": "Removes the obnoxious block delay of the shield, so it works the moment you press Right-Click. No more delay and confusion!",
   "authors": [
@@ -16,18 +16,18 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.justmili.fabric.AlwaysShieldFabric"
+      "net.justmili.AlwaysShield"
     ],
     "client": []
   },
   "mixins": [
-    "alwaysshield-common.mixins.json"
+    "alwaysshield-snapshots.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=0.18.3",
     "minecraft": [
       "26.1-snapshot-1"
     ],
-    "java": ">=26"
+    "java": ">=25"
   }
 }

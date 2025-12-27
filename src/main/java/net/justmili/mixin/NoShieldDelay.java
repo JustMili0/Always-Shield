@@ -15,7 +15,6 @@ import org.jetbrains.annotations.Nullable;
 @Mixin(LivingEntity.class)
 public class NoShieldDelay {
     @Shadow @Nullable protected ItemStack useItem;
-
     @Inject(method = "getItemBlockingWith", at = @At("HEAD"), cancellable = true)
     private void removeShieldDelay(CallbackInfoReturnable<ItemStack> cir) {
         LivingEntity self = (LivingEntity) (Object) this;

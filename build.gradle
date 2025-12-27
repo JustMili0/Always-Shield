@@ -1,79 +1,44 @@
 plugins {
-    id 'dev.architectury.loom' version '1.13-SNAPSHOT' apply false
-    id 'architectury-plugin' version '3.4-SNAPSHOT'
-    id 'com.gradleup.shadow' version '8.3.6' apply false
+	id 'net.fabricmc.fabric-loom' version "${loom_version}"
+	id 'maven-publish'
 }
 
-architectury {
-    minecraft = project.minecraft_version
+version = project.mod_version
+group = project.maven_group
+
+base {
+	archivesName = project.archives_base_name
 }
 
-allprojects {
-    group = rootProject.maven_group
-    version = rootProject.mod_version //for file building
-    mod_version = rootProject.mod_version
-    minecraft_version = rootProject.minecraft_version
-    neo_version_range = rootProject.neo_version_range
+repositories {}
+
+dependencies {
+	minecraft "com.mojang:minecraft:${project.minecraft_version}"
+	
+	implementation "net.fabricmc:fabric-loader:${project.loader_version}"
 }
 
-subprojects {
-    apply plugin: 'dev.architectury.loom'
-    apply plugin: 'architectury-plugin'
-    apply plugin: 'maven-publish'
+processResources {
+	inputs.property "version", project.version
 
-    base { archivesName = rootProject.display_name }
+	filesMatching("fabric.mod.json") {
+		expand "version": inputs.properties.version
+	}
+}
 
-    repositories {
-    }
+tasks.withType(JavaCompile).configureEach {
+	it.options.release = 25
+}
 
-    loom {
-        silentMojangMappingsLicense()
-    }
+java {
+	sourceCompatibility = JavaVersion.VERSION_25
+	targetCompatibility = JavaVersion.VERSION_25
+}
 
-    dependencies {
-        minecraft "net.minecraft:minecraft:$rootProject.minecraft_version"
-        mappings loom.officialMojangMappings() //Doesn't work?
-        //TODO: FIX MAPPINGS
-    }
+jar {
+	inputs.property "archivesName", project.base.archivesName
 
-    java {
-        sourceCompatibility = JavaVersion.VERSION_25
-        targetCompatibility = JavaVersion.VERSION_25
-    }
-
-    tasks.withType(JavaCompile).configureEach {
-        it.options.release = 25
-    }
-
-    def detectedPlatform
-    def name = project.name.toLowerCase()
-    if (name.contains('fabric')) {
-        detectedPlatform = 'Fabric'
-    } else if (name.contains('quilt')) {
-        detectedPlatform = 'Quilt'
-    } else if (name.contains('neoforge')) {
-        detectedPlatform = 'NeoForge'
-    } else if (name.contains('forge')) {
-        detectedPlatform = 'Forge'
-    } else {
-        detectedPlatform = 'Unknown'
-    }
-
-    if (detectedPlatform) {
-        project.version = "${rootProject.mod_version}+mc${rootProject.minecraft_version}-${detectedPlatform}"
-    } else {
-        project.version = rootProject.mod_version
-    }
-
-    tasks.withType(Jar).configureEach { Jar jarTask ->
-        jarTask.archiveBaseName.set(rootProject.display_name)
-        jarTask.archiveVersion.set(project.version.toString())
-    }
-
-    tasks.matching { it.name == 'shadowJar' }.configureEach { task ->
-        if (task.hasProperty('archiveBaseName')) {
-            task.archiveBaseName.set(rootProject.display_name)
-            task.archiveVersion.set(project.version.toString())
-        }
-    }
+	from("LICENSE") {
+		rename { "${it}_${inputs.properties.archivesName}"}
+	}
 }

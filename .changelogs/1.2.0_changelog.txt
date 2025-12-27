@@ -1,9 +1,6 @@
 ## New Loader Support
 - Quilt
 
-## New Version Support
-- 26.1 Snapshot 1 [WORKING ON IT]
-
 ## Fixed
 - NeoForge mod loader compatibility error (accross all versions)
 - Some other stuff I don't remember, I've been battling Forgix most of this time and forgot everything else

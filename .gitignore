@@ -5,15 +5,19 @@ run/
 .settings/
 build/
 bin/
-neoforge/run
-neoforge/.gradle
-neoforge/build
 fabric/run
 fabric/build
 fabric/.gradle
+quilt/run
+quilt/build
+quilt/.gradle
 forge/run
 forge/build
 forge/.gradle
+neoforge/run
+neoforge/.gradle
+neoforge/build
+common/run
 common/build
 common/.gradle
 

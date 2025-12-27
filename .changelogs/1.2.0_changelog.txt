@@ -6,6 +6,4 @@
 
 ## Fixed
 - NeoForge mod loader compatibility error (accross all versions)
-
-## Other (Source code)
-- Added Forgix to project gradle to have all loaders in one jar (except forge, it's a separate file)
+- Some other stuff I don't remember, I've been battling Forgix most of this time and forgot everything else

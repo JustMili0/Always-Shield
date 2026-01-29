@@ -14,9 +14,9 @@ Removes the obnoxious block delay of the shield, so it works the moment you pres
 logoFile = "icon.png"
 
 [[dependencies.alwaysshield]]
-modId = "forge"
+modId = "neoforge"
 mandatory = true
-versionRange = "[${forge_version_range},)"
+versionRange = "[${neo_version_range},)"
 ordering = "NONE"
 side = "BOTH"
 
@@ -26,3 +26,6 @@ mandatory = true
 versionRange = "[1.20.2,1.20.6]"
 ordering = "NONE"
 side = "BOTH"
+
+[[mixins]]
+config = "alwaysshield-common.mixins.json"

@@ -48,8 +48,6 @@ subprojects {
     def name = project.name.toLowerCase()
     if (name.contains('fabric')) {
         detectedPlatform = 'Fabric'
-    } else if (name.contains('neoforge')) {
-        detectedPlatform = 'NeoForge'
     } else if (name.contains('forge')) {
         detectedPlatform = 'Forge'
     } else {

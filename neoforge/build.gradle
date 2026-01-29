@@ -46,6 +46,11 @@ processResources {
                 minecraft_version: inputs.properties.minecraft_version,
                 neo_version_range: inputs.properties.neo_version_range
     }
+    filesMatching('META-INF/mods.toml') {
+        expand mod_version: inputs.properties.mod_version,
+                minecraft_version: inputs.properties.minecraft_version,
+                neo_version_range: inputs.properties.neo_version_range
+    }
 }
 
 shadowJar {

@@ -13,6 +13,8 @@ allprojects {
     version = rootProject.mod_version //for file building
     mod_version = rootProject.mod_version
     minecraft_version = rootProject.minecraft_version
+    fabric_loader_version = rootProject.fabric_loader_version
+    forge_version_range = rootProject.forge_version_range
     neo_version_range = rootProject.neo_version_range
 }
 
@@ -48,8 +50,6 @@ subprojects {
     def name = project.name.toLowerCase()
     if (name.contains('fabric')) {
         detectedPlatform = 'Fabric'
-    } else if (name.contains('quilt')) {
-        detectedPlatform = 'Quilt'
     } else if (name.contains('neoforge')) {
         detectedPlatform = 'NeoForge'
     } else if (name.contains('forge')) {

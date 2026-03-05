@@ -1,6 +1,6 @@
 ![Titlecard](https://cdn.modrinth.com/data/cached_images/8c95c7194998b4b04e898c8b47f61c79745188c4.png)
 
-<pre><center>"Never hit again with your shield up"</center></pre>
+<pre><div style="text-align:center">"Never hit again with your shield up"</div></pre>
 
 <hr>
 

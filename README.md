@@ -1,6 +1,7 @@
-![Titlecard](https://cdn.modrinth.com/data/cached_images/8c95c7194998b4b04e898c8b47f61c79745188c4.png)
+![Titlecard](https://cdn.modrinth.com/data/cached_images/be74546299916cbc6f31099b7f232db158e14101.png)
 
-<pre><div style="text-align:center">"Never hit again with your shield up"</div></pre>
+<pre>"Never hit again with your shield up"</pre>
+# Idk for some reason GitHub's mardown doesn't like having a way to center text
 
 <hr>
 

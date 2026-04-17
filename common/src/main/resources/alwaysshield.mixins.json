@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.justmili.alwaysshield.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "NoShieldDelay"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  }
+}

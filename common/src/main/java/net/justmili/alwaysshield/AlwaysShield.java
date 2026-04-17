@@ -1,6 +1,7 @@
-package net.justmili;
+package net.justmili.alwaysshield;
 
-public final class AlwaysShield {
+public class AlwaysShield {
     public static final String MOD_ID = "alwaysshield";
+
     public static void init() {}
 }

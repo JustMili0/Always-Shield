@@ -1,4 +1,4 @@
-package net.justmili.mixin;
+package net.justmili.alwaysshield.mixin;
 
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;

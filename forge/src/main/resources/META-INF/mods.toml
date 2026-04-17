@@ -1,28 +1,25 @@
-modLoader = "javafml"
-loaderVersion = "[4,)"
-issueTrackerURL = "https://github.com/JustMili0/Always-Shield/issues"
-license = "MIT"
+modLoader="javafml"
+loaderVersion="[0,)"
+license = "${mod_license}"
 
 [[mods]]
-modId = "alwaysshield"
+modId = "${mod_id}"
 version = "${mod_version}"
-displayName = "Always Shield"
-authors = "JustMili"
-description = '''
-Removes the obnoxious block delay of the shield, so it works the moment you press Right-Click. No more delay and confusion!
-'''
+displayName = "${mod_name}"
+description = "${mod_description}"
+authors = "${mod_authors}"
 logoFile = "icon.png"
 
-[[dependencies.alwaysshield]]
-modId = "forge"
+[[dependencies.${mod_id}]]
+modId = "minecraft"
 mandatory = true
-versionRange = "[${forge_version_range},)"
+versionRange = "${minecraft_version_constraint}"
 ordering = "NONE"
 side = "BOTH"
 
-[[dependencies.alwaysshield]]
-modId = "minecraft"
+[[dependencies.${mod_id}]]
+modId = "forge"
 mandatory = true
-versionRange = "[26.1,)"
+versionRange = "[${forge_version},)"
 ordering = "NONE"
 side = "BOTH"

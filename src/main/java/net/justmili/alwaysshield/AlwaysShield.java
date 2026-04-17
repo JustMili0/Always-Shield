@@ -1,4 +1,4 @@
-package net.justmili;
+package net.justmili.alwaysshield;
 
 import net.fabricmc.api.ModInitializer;
 

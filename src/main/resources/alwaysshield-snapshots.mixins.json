@@ -1,6 +1,6 @@
 {
   "required": true,
-  "package": "net.justmili.mixin",
+  "package": "net.justmili.alwaysshield.mixin",
   "compatibilityLevel": "JAVA_25",
   "mixins": [
     "NoShieldDelay"

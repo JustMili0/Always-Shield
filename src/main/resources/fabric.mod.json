@@ -9,14 +9,15 @@
   ],
   "contact": {
     "homepage": "https://modrinth.com/mod/always-shield",
-    "sources": "https://github.com/JustMili0/Always-Shield"
+    "sources": "https://github.com/Lumynity-Studios/Always-Shield",
+    "issues": "https://github.com/Lumynity-Studios/Always-Shield/issues"
   },
   "license": "MIT",
   "icon": "icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.justmili.AlwaysShield"
+      "net.justmili.alwaysshield.AlwaysShield"
     ],
     "client": []
   },
@@ -24,8 +25,8 @@
     "alwaysshield-snapshots.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.18.3",
-    "minecraft": "~26.1-",
+    "fabricloader": ">=0.19.2",
+    "minecraft": "~26.2-",
     "java": ">=25"
   }
 }

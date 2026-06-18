@@ -20,13 +20,11 @@ public class NoShieldDelay {
     private void removeShieldDelay(CallbackInfoReturnable<ItemStack> cir) {
         LivingEntity self = (LivingEntity) (Object) this;
 
-        if (!self.isUsingItem()) { return; }
-        if (this.useItem == null || this.useItem.isEmpty()) { return; }
+        if (!self.isUsingItem()) return;
+        if (this.useItem == null || this.useItem.isEmpty()) return;
 
         Item item = this.useItem.getItem();
-        if (item.getUseAnimation(this.useItem) != ItemUseAnimation.BLOCK) {
-            return;
-        }
+        if (item.getUseAnimation(this.useItem) != ItemUseAnimation.BLOCK) return;
 
         cir.setReturnValue(this.useItem);
     }

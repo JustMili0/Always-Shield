@@ -1,32 +1,28 @@
 {
   "schemaVersion": 1,
-  "id": "alwaysshield",
+  "id": "${mod_id}",
   "version": "${mod_version}",
-  "name": "Always Shield",
-  "description": "Removes the obnoxious block delay of the shield, so it works the moment you press Right-Click. No more delay and confusion!",
-  "authors": [
-    "JustMili"
-  ],
+  "name": "${mod_name}",
+  "description": "${mod_description}",
+  "authors": ["${mod_authors}"],
   "contact": {
     "homepage": "https://modrinth.com/mod/always-shield",
     "sources": "https://github.com/Lumynity-Studios/Always-Shield",
     "issues": "https://github.com/Lumynity-Studios/Always-Shield/issues"
   },
-  "license": "MIT",
+  "license": "${mod_license}",
   "icon": "icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
       "net.justmili.alwaysshield.AlwaysShield"
-    ],
-    "client": []
+    ]
   },
   "mixins": [
-    "alwaysshield-snapshots.mixins.json"
+    "${mod_id}-snapshots.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.19.2",
-    "minecraft": "~26.2-",
-    "java": ">=25"
+    "fabricloader": ">=${fabric_loader_version}",
+    "minecraft": "${minecraft_version_constraint}"
   }
 }
